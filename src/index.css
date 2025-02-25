@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,9 +29,14 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #111827; /* matches bg-gray-900 */
+}
+
+#root {
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -70,4 +76,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-

@@ -4,16 +4,20 @@ import Projects from "./components/Projects";
 
 function App() {
   return (
-    <div className="bg-gray-900 min-h-screen text-white flex flex-col">
+    <div className="bg-gray-900 text-white flex flex-col min-h-screen w-full">
+      {/* Navbar - Full Width */}
       <Navbar />
-      <Hero />
-      <Projects />
-      <footer className="bg-black text-white py-4 text-center">
+
+      {/* Main Content */}
+      <main className="flex-grow w-full flex flex-col">
+        <Hero />
+        <Projects />
+      </main>
+
+      {/* Footer - Always at the Bottom */}
+      <footer className="bg-black text-white py-4 text-center w-full">
         <p>&copy; 2025 Mohammed Zaheen. All rights reserved.</p>
       </footer>
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-        <h1 className="text-4xl font-bold">Welcome to My Portfolio</h1>
-      </main>
     </div>
   );
 }
