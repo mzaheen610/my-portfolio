@@ -1,4 +1,4 @@
-import Button from "@/components/ui/button";
+import Button from "@/components/ui/Button";
 import { CodeBlock, dracula } from "react-code-blocks";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -32,9 +32,17 @@ const Hero = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                    <Button variant="default">View Projects</Button>
-                    <Button variant="outline">GitHub</Button>
-                </div>
+                    <Button variant="outline">View Projects</Button>
+
+                    <Button variant="outline" asChild>
+                        <a
+                            href="https://github.com/mzaheen610?tab=repositories"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+                    </Button>                </div>
             </div>
 
             {/* Right Code Snippet */}
@@ -51,7 +59,7 @@ const Hero = () => {
                             </div>
                             {/* Tabs */}
                             <div className="flex space-x-2 ml-4">
-                                <div className="text-white bg-gray-900/70 px-4 py-1 rounded-md shadow-lg border border-gray-700/50">App.py</div>
+                                <div className="text-white bg-gray-900/70 px-4 py-1 rounded-md shadow-lg border border-gray-700/50">main.py</div>
                                 <div className="text-gray-400 hover:text-gray-300 px-4 py-1 rounded-md transition-colors duration-200">App.jsx</div>
                             </div>
                         </div>
