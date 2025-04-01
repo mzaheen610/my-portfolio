@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
-
+import { Analytics } from "@vercel/analytics/react";
 function App() {
   return (
     <div className="bg-gray-900 text-white flex flex-col min-h-screen w-full">
@@ -18,6 +18,8 @@ function App() {
       <footer className="bg-black text-white py-4 text-center w-full">
         <p>&copy; 2025 Mohammed Zaheen. All rights reserved.</p>
       </footer>
+      {/* Analytics */}
+      <Analytics />
     </div>
   );
 }
