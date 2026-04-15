@@ -29,47 +29,58 @@ const Projects = () => {
     },
     {
       id: 3,
-      name: "Gully Lens",
-      description: "A consumer analytics mobile app for tracking offline purchases and gaining actionable insights about spending patterns and product trends.",
-      longDescription: "Co-developed a Flutter-based mobile application with Django backend for retail analytics. Users can log purchases, categorize expenses, and receive smart recommendations. Real-time data sync with PostgreSQL backend.",
-      techStack: ["Django", "Flutter", "PostgreSQL", "Firebase", "REST API"],
+      name: "ShopLinky Virtual Product Placement",
+      description: "A computer-vision pipeline that places virtual products into real scenes for interactive retail previews.",
+      longDescription: "Developed a virtual placement workflow for product visualization in real-world environments. Focused on object alignment, scene consistency, and realistic rendering for e-commerce use cases.",
+      techStack: ["Python", "OpenCV", "Computer Vision", "Image Processing"],
       github: "#",
       demo: null,
-      image: "/images/gully-lens.png",
-      category: "fullstack",
+      image: "/images/shoplinky_virtual_product_placement.png",
+      category: "cv",
     },
     {
       id: 4,
-      name: "Stock Market Predictor",
-      description: "An ML-based stock recommendation model using historical data and technical indicators to predict market trends and provide investment recommendations.",
-      longDescription: "Developed a predictive model using time-series analysis and machine learning algorithms. Integrated with real-time market data APIs, built a REST API with FastAPI, and created visualizations for trend analysis and predictions.",
-      techStack: ["Python", "FastAPI", "Scikit-Learn", "Pandas", "TensorFlow", "Plotly"],
+      name: "Virtual Product Placement - Scene Mapping",
+      description: "A scene-mapping experiment for placing virtual products (can-on-table setup) with perspective-aware positioning.",
+      longDescription: "Implemented scene-aware placement for tabletop contexts with image transformation and placement calibration to improve visual realism in generated previews.",
+      techStack: ["Python", "OpenCV", "Geometry", "Image Processing"],
       github: "#",
       demo: null,
-      image: "/images/stock-predictor.png",
-      category: "ml",
+      image: "/images/virtual_product_placement_can_on_table.png",
+      category: "cv",
     },
     {
       id: 5,
-      name: "E-commerce Platform",
-      description: "Full-featured e-commerce platform with product catalog, shopping cart, payment integration, and order management system.",
-      longDescription: "Built a scalable e-commerce solution with user authentication, product filtering, secure checkout, and admin dashboard. Integrated Stripe for payments and implemented order tracking with email notifications.",
-      techStack: ["React", "Node.js", "Express", "MongoDB", "Stripe", "JWT"],
+      name: "BARN Challenge RL PPO Training",
+      description: "A reinforcement learning training setup for robot navigation using PPO in cluttered environments inspired by the BARN challenge.",
+      longDescription: "Trained and evaluated a PPO-based navigation agent for obstacle-rich navigation benchmarks. Focused on stability, reward shaping, and policy performance under varied map conditions.",
+      techStack: ["Python", "Reinforcement Learning", "PPO", "Simulation"],
       github: "#",
       demo: null,
-      image: "/images/ecommerce.png",
-      category: "fullstack",
+      image: "/images/icra_BARN_challenge_RL_PPO_training.png",
+      category: "robotics",
     },
     {
       id: 6,
-      name: "Task Management App",
-      description: "Collaborative task management tool with real-time updates, team collaboration features, and productivity analytics.",
-      longDescription: "A web application for teams to organize tasks, set deadlines, assign responsibilities, and track progress. Features include drag-and-drop kanban boards, team communication, and automated reminders.",
-      techStack: ["React", "Firebase", "TailwindCSS", "Redux", "WebSockets"],
+      name: "Embedded Lab Mapping with ROS",
+      description: "A robotics mapping setup in an embedded lab environment using ROS-based navigation and map generation workflows.",
+      longDescription: "Built and tested a ROS mapping pipeline with hardware integration for map generation and navigation validation in constrained indoor environments.",
+      techStack: ["ROS", "Python", "Robotics", "SLAM", "Embedded Systems"],
       github: "#",
       demo: null,
-      image: "/images/task-manager.png",
-      category: "fullstack",
+      image: "/images/embedded_lab_map_ros.png",
+      category: "robotics",
+    },
+    {
+      id: 7,
+      name: "Robotics Hardware Integration Setup",
+      description: "Hardware setup and validation workflow for robotics experiments, sensors, and compute integration.",
+      longDescription: "Documented and validated hardware assembly and bring-up process for robotics experiments, including connectivity checks and deployment readiness.",
+      techStack: ["Embedded Systems", "Robotics", "Linux", "Sensor Integration"],
+      github: "#",
+      demo: null,
+      image: "/images/hardware_setup.jpeg",
+      category: "robotics",
     },
   ];
 
@@ -77,6 +88,8 @@ const Projects = () => {
     { id: "all", label: "All Projects" },
     { id: "fullstack", label: "Full Stack" },
     { id: "ml", label: "Machine Learning" },
+    { id: "cv", label: "Computer Vision" },
+    { id: "robotics", label: "Robotics" },
   ];
 
   const filteredProjects =
@@ -122,7 +135,7 @@ const Projects = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Featured Projects</h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A collection of my work spanning full-stack development, machine learning, and data science
+            A collection of my recent work across full-stack development, machine learning, computer vision, and robotics
           </p>
         </motion.div>
 
