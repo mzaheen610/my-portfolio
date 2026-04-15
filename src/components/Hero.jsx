@@ -6,7 +6,7 @@ const Hero = () => {
     const code = `from fastapi import FastAPI\nimport joblib\nimport numpy as np\n\napp = FastAPI()\nmodel = joblib.load("stock_model.pkl")\n\n@app.get("/predict/")\ndef predict(price_history: list[float]):\n    prediction = model.predict(np.array(price_history).reshape(1, -1))\n    return {"next_week_trend": prediction.tolist()}`;
 
     return (
-        <section className="w-full py-16 px-6 sm:px-8 lg:px-12 bg-gray-900 text-white flex flex-col md:flex-row items-center justify-between">
+        <section id="hero" className="w-full py-16 px-6 sm:px-8 lg:px-12 bg-gray-900 text-white flex flex-col md:flex-row items-center justify-between mt-16">
             {/* Left Content */}
             <div className="md:w-1/2 flex-1 flex flex-col items-center md:items-start md:pr-8">
                 <h1 className="text-4xl font-bold leading-tight mb-4 text-center md:text-left">
