@@ -1,8 +1,7 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
@@ -12,12 +11,10 @@ function App() {
       <Navbar />
 
       {/* Main Content */}
-      <main className="flex-grow w-full flex flex-col">
-        <Hero />
-        <Projects />
-        <About />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects/:slug" element={<ProjectDetailsPage />} />
+      </Routes>
 
       {/* Footer - Always at the Bottom */}
       <footer className="bg-black text-white py-8 text-center w-full border-t border-gray-800">

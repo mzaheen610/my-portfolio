@@ -1,88 +1,10 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { projects } from "../data/projects";
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
-
-  const projects = [
-    {
-      id: 1,
-      name: "School Management System",
-      description: "A comprehensive web-based school management system for managing students, teachers, and classes. Features include student enrollment, grade tracking, attendance management, and exam scheduling.",
-      longDescription: "Built during my academic tenure, this Django-based system streamlined administrative tasks for schools. Implemented role-based access control for administrators, teachers, and students, with real-time data updates and reporting capabilities.",
-      techStack: ["Python", "Django", "PostgreSQL", "HTML/CSS/JS", "Bootstrap"],
-      github: "https://github.com/mzaheen610/school-management-system",
-      demo: null,
-      image: "/images/school-management.png",
-      category: "fullstack",
-    },
-    {
-      id: 2,
-      name: "Image Compression using SVD",
-      description: "Applied Singular Value Decomposition (SVD) for dimensionality reduction and efficient image compression on grayscale images with minimal quality loss.",
-      longDescription: "A machine learning project demonstrating linear algebra applications. Used NumPy and OpenCV to compress images using SVD, achieving 70% size reduction while maintaining visual fidelity. Includes visualization of compression trade-offs.",
-      techStack: ["Python", "NumPy", "OpenCV", "Matplotlib", "Scikit-Learn"],
-      github: "#",
-      demo: null,
-      image: "/images/image-compression.png",
-      category: "ml",
-    },
-    {
-      id: 3,
-      name: "ShopLinky Virtual Product Placement",
-      description: "A computer-vision pipeline that places virtual products into real scenes for interactive retail previews.",
-      longDescription: "Developed a virtual placement workflow for product visualization in real-world environments. Focused on object alignment, scene consistency, and realistic rendering for e-commerce use cases.",
-      techStack: ["Python", "OpenCV", "Computer Vision", "Image Processing"],
-      github: "#",
-      demo: null,
-      image: "/images/shoplinky_virtual_product_placement.png",
-      category: "cv",
-    },
-    {
-      id: 4,
-      name: "Virtual Product Placement - Scene Mapping",
-      description: "A scene-mapping experiment for placing virtual products (can-on-table setup) with perspective-aware positioning.",
-      longDescription: "Implemented scene-aware placement for tabletop contexts with image transformation and placement calibration to improve visual realism in generated previews.",
-      techStack: ["Python", "OpenCV", "Geometry", "Image Processing"],
-      github: "#",
-      demo: null,
-      image: "/images/virtual_product_placement_can_on_table.png",
-      category: "cv",
-    },
-    {
-      id: 5,
-      name: "BARN Challenge RL PPO Training",
-      description: "A reinforcement learning training setup for robot navigation using PPO in cluttered environments inspired by the BARN challenge.",
-      longDescription: "Trained and evaluated a PPO-based navigation agent for obstacle-rich navigation benchmarks. Focused on stability, reward shaping, and policy performance under varied map conditions.",
-      techStack: ["Python", "Reinforcement Learning", "PPO", "Simulation"],
-      github: "#",
-      demo: null,
-      image: "/images/icra_BARN_challenge_RL_PPO_training.png",
-      category: "robotics",
-    },
-    {
-      id: 6,
-      name: "Embedded Lab Mapping with ROS",
-      description: "A robotics mapping setup in an embedded lab environment using ROS-based navigation and map generation workflows.",
-      longDescription: "Built and tested a ROS mapping pipeline with hardware integration for map generation and navigation validation in constrained indoor environments.",
-      techStack: ["ROS", "Python", "Robotics", "SLAM", "Embedded Systems"],
-      github: "#",
-      demo: null,
-      image: "/images/embedded_lab_map_ros.png",
-      category: "robotics",
-    },
-    {
-      id: 7,
-      name: "Robotics Hardware Integration Setup",
-      description: "Hardware setup and validation workflow for robotics experiments, sensors, and compute integration.",
-      longDescription: "Documented and validated hardware assembly and bring-up process for robotics experiments, including connectivity checks and deployment readiness.",
-      techStack: ["Embedded Systems", "Robotics", "Linux", "Sensor Integration"],
-      github: "#",
-      demo: null,
-      image: "/images/hardware_setup.jpeg",
-      category: "robotics",
-    },
-  ];
 
   const categories = [
     { id: "all", label: "All Projects" },
@@ -90,6 +12,8 @@ const Projects = () => {
     { id: "ml", label: "Machine Learning" },
     { id: "cv", label: "Computer Vision" },
     { id: "robotics", label: "Robotics" },
+    { id: "embedded", label: "Embedded Systems" },
+    { id: "ai", label: "AI Systems" },
   ];
 
   const filteredProjects =
@@ -242,6 +166,12 @@ const Projects = () => {
                       Live Demo
                     </a>
                   )}
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="flex-1 py-2 px-3 bg-gray-700 hover:bg-indigo-600 text-center text-sm rounded-lg transition-colors"
+                  >
+                    Details
+                  </Link>
                 </div>
               </div>
             </motion.div>

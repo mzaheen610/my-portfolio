@@ -32,7 +32,17 @@ const Hero = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                    <Button variant="outline">View Projects</Button>
+                    <Button
+                        variant="outline"
+                        onClick={() => {
+                            const section = document.querySelector("#projects");
+                            if (section) {
+                                section.scrollIntoView({ behavior: "smooth" });
+                            }
+                        }}
+                    >
+                        View Projects
+                    </Button>
 
                     <Button variant="outline" asChild>
                         <a
